@@ -1,0 +1,38 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8088/ui
+        instance:
+          service-base-url: http://localhost:8081
+#  cloud:
+#    config:
+#      label: master
+#      profile: dev
+##      uri: http://localhost:8088/
+#      discovery:
+#        enabled: true
+#        serviceId: config-server
+  application:
+    name: config-feign-client
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+info:
+  version: @project.version@
+  groupId: @project.groupId@
+  artifactId: @project.artifactId@
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/

@@ -1,0 +1,49 @@
+server:
+  port: 8088
+
+eureka:
+  instance:
+    hostname: localhost
+    metadata-map:
+      user:
+        name: ${spring.security.user.name}
+        password: ${spring.security.user.password}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+
+spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/lifeng159632/spring-cloud-demo
+#          searchPaths: /
+#          username: lifeng159632
+#          password: libin123
+#      label: master
+  application:
+    name: admin-server
+  boot:
+    admin:
+      context-path: ui
+      ui:
+        title: euraka-admin
+      notify:
+        mail:
+          to: ["lifeng6688@foxmail.com"]
+          from: "lifeng159632@163.com"
+  security:
+    user:
+      name: admin
+      password: 123456
+  mail:
+    host: smtp.163.com
+    username: lifeng159632@163.com
+    password: 5686760
+    protocol: smtp
+    test-connection: true
+
+
+zookeeper:
+  path: 49.232.109.87:2181
