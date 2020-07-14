@@ -1,4 +1,4 @@
-FROM 3.6-openjdk-8
+FROM maven:3.6-openjdk-8
 WORKDIR /data/apps/springcloud_study-master/spring-cloud-eureka
 COPY . .
 RUN mvn clean install
