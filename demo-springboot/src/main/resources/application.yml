@@ -3,14 +3,14 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: sc-admin
     metadata-map:
       user:
         name: ${spring.security.user.name}
         password: ${spring.security.user.password}
   client:
     serviceUrl:
-      defaultZone: http://localhost:8000/eureka/
+      defaultZone: http://192.168.1.250:8000/eureka/
 
 spring:
 #  cloud:

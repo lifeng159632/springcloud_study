@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://192.168.1.250:8001
+      name: config-feign-client
+    bus:
+      refresh:
+        enabled: true
+  kafka:
+    bootstrap-servers: 127.0.0.1:9002
+    consumer:
+      group-id: config-client1
+

@@ -7,7 +7,7 @@ eureka:
     service-url:
         defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   instance:
-    hostname: localhost
+    hostname: 192.168.1.250
 management:
   endpoints:
     web:
@@ -19,3 +19,18 @@ management:
 spring:
   application:
     name: eureka-admin
+  redis:
+    cluster:
+      nodes: 192.168.56.253:9001,192.168.56.253:9002,192.168.56.253:9003
+      max-redirects: 3
+    timeout: 5000ms
+#  redis:
+#    host: 49.232.109.87
+#    database: 1
+#    password: 123456
+#    port: 6379
+#  redis:
+#    host: 49.232.109.87
+#    database: 1
+#    password: 123456
+#    port: 6666

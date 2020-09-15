@@ -8,12 +8,12 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.0.RELEASE</version>
+        <relativePath></relativePath>
     </parent>
 
     <groupId>com.lee</groupId>
     <artifactId>springcloud-eureka</artifactId>
     <version>1.0-SNAPSHOT</version>
-
 
     <dependencies>
         <dependency>
@@ -30,6 +30,26 @@
             <artifactId>spring-boot-admin-starter-client</artifactId>
             <version>2.2.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.lee.SpringCloudEurekaApplication</mainClass>
+                    <executable>true</executable>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
